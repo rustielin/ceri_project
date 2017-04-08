@@ -1,0 +1,22 @@
+{
+  "name": "ceri_project",
+  "version": "1.0.0",
+  "description": "Berkeley Builds Designathon 2017 -- Center for Empowering Refugees and Immigrants (CERI)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rustielin/ceri_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rustielin/ceri_project/issues"
+  },
+  "homepage": "https://github.com/rustielin/ceri_project#readme",
+  "dependencies": {
+    "angular": "^1.6.3"
+  }
+}
