@@ -25,6 +25,7 @@
 }
 
 .img-circle {
+    background-color: transparent;
     border-radius: 50%;
     width: 150px;
     height: 150px;
@@ -36,6 +37,11 @@
     width: 150px;
     height: 150px;
     padding: 50px;
+}
+
+.figcaption {
+
+    color: white;
 }
 
 .background-img {
@@ -104,7 +110,7 @@ figcaption {
   font-variant: small-caps;
   font-family: Arial;
   font-weight: bold;
-  color: #bb3333;
+  color: white;
 }
 figure {
   padding: 5px;
