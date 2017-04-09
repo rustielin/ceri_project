@@ -1,13 +1,16 @@
+/**
+ * Created by rustie on 4/9/17.
+ */
 'use strict';
 
-angular.module('myApp.view5', ['ngRoute'])
+angular.module('myApp.view6', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when("/view5", {
-            templateUrl: "view5/view5.html",
-            controller: "view5Ctrl"
+        $routeProvider.when("/view6", {
+            templateUrl: "view6/view6.html",
+            controller: "view6Ctrl"
         });
-    }]).controller('view5Ctrl', function($scope, srvShareData) {
+    }]).controller('view6Ctrl', function($scope, srvShareData) {
 
     $scope.sharedData = srvShareData.getData();
 
@@ -18,9 +21,6 @@ angular.module('myApp.view5', ['ngRoute'])
     $scope.shareMyData = function (key, myValue, location) {
         $scope.dataToShare = myValue;
         srvShareData.addData(key, $scope.dataToShare, location);
-
-        window.location.href = "/#!/view6";
-
     }
 
     $scope.uncheck = function (event) {

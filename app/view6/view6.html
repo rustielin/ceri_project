@@ -1,0 +1,92 @@
+<div ng-controller="view6Ctrl">
+    <div style="text-align: center">
+        <h1 style="text-align: center">What was your<br>school like?</h1>
+        <form layout="row">
+            <div style="width:50%; text-align: center">
+                <table align="center" style="width: 100%">
+                    <tbody>
+                    <tr>
+                        <td align="right">
+                            <img id="grandparentImage" class="img-circle" src="../res/avatars/BB_2_3.png"><br>
+                            <md-switch align="center" style="text-align: center" ng-model="booleanUS1Val" id="buttonUS1Val" >
+                                result: {{booleanUS1Val}}
+                            </md-switch>
+                        </td>
+                        <td>
+                            <md-switch id="buttonUS2" ng-click="booleanVal2 = !booleanVal2" ng-init="booleanVal2 = FALSE">
+                                {{booleanVal2}}
+                            </md-switch>
+                        </td>
+                        <td>
+                            <md-switch value="500">
+                                Apple
+                            </md-switch>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <md-switch>
+                                boring
+                            </md-switch>
+                        </td>
+                        <td>
+                            <md-switch>
+                                boring
+                            </md-switch>
+                        </td>
+                        <td>
+                            <md-switch>
+                                boring
+                            </md-switch>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <md-divider></md-divider>
+            <div style="width:50%; text-align: center">
+                <table style="width: 100%">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <md-switch>
+                                boring
+                            </md-switch>
+                        </td>
+                        <td>
+                            <md-switch>
+                                boring
+                            </md-switch>
+                        </td>
+                        <td>
+                            <md-switch>
+                                boring
+                            </md-switch>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <md-switch>
+                                boring
+                            </md-switch>
+                        </td>
+                        <td>
+                            <md-switch>
+                                boring
+                            </md-switch>
+                        </td>
+                        <td>
+                            <md-switch>
+                                boring
+                            </md-switch>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+    <div style="text-align: center">
+        <md-button class="md-raised" ng-click="shareMyData('booleanUS1val', booleanUS1Val)">next</md-button>
+    </div>
+</div>

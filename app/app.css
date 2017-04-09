@@ -28,9 +28,12 @@
     border-radius: 50%;
     max-width: 50%;
     max-height: 50%;
+    width: 100%;
+    height: auto;
 }
 
 .background-img {
+    width: 100%;
     background-image: url("./res/backgrounds/1_1.png");
     /*filter: blur(3px);*/
     -webkit-background-size: cover;
