@@ -9,23 +9,72 @@ angular.module('myApp.view4', ['ngRoute'])
         });
     }])
 
-    .controller('view4Ctrl', function ($scope, $window) {
 
-        var london = ol.proj.transform([-0.12755, 51.507222], 'EPSG:4326', 'EPSG:3857');
-        var rome = ol.proj.transform([12.5, 41.9], 'EPSG:4326', 'EPSG:3857');
+    .controller('view4Ctrl', function ($scope, srvShareData) {
 
+        //var start = ol.proj.transform([srvShareData.getData()['grandchild']['lat'], srvShareData.getData()['grandchild']['long']], 'EPSG:4326', 'EPSG:3857');
+        //var dest = ol.proj.transform([srvShareData.getData()['grandfather']['lat'], srvShareData.getData()['grandfather']['long']], 'EPSG:4326', 'EPSG:3857');
+
+        //var start = ol.proj.transform([134, -23], 'EPSG:4326', 'EPSG:3857');
+
+        var pre_pos = ol.proj.transform([-122.5, 37], 'EPSG:4326', 'EPSG:3857');
+
+        var start = "San Fransisco, CA, US";
+        var end = "Phnom Penh, Cambodia";
+
+
+        var geocoder =  new google.maps.Geocoder();
 
         var map;
 
+
+
+
+
         $scope.init = function () {
+
+            geocoder.geocode( { 'address': start}, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    console.log("location : " + results[0].geometry.location.lat() + " " +results[0].geometry.location.lng());
+
+                    var start_pos = ol.proj.transform([results[0].geometry.location.lng(), results[0].geometry.location.lat()], 'EPSG:4326','EPSG:3857');
+                    doBounce(start_pos);
+
+
+                    setTimeout(function () {
+                        geocoder.geocode( { 'address': end}, function(results, status) {
+                            if (status == google.maps.GeocoderStatus.OK) {
+                                console.log("location : " + results[0].geometry.location.lat() + " " +results[0].geometry.location.lng());
+
+                                var end_pos = ol.proj.transform([results[0].geometry.location.lng(), results[0].geometry.location.lat()], 'EPSG:4326','EPSG:3857');
+                                doBounce(end_pos)
+
+
+
+
+                            } else {
+                                console.log("Something got wrong " + status);
+                            }
+                        });
+                    }, 5000);
+
+
+
+
+
+                } else {
+                    console.log("Something got wrong " + status);
+                }
+            });
+
 
             var layer = new ol.layer.Tile({
                 source: new ol.source.OSM()
             });
 
             var view = new ol.View({
-                center: london,
-                zoom: 6
+                center: pre_pos,
+                zoom: 7
             });
 
 
@@ -36,13 +85,14 @@ angular.module('myApp.view4', ['ngRoute'])
             });
 
 
+
         };
 
 
         function doBounce(location) {
             // bounce by zooming out one level and back in
             var bounce = ol.animation.bounce({
-                resolution: map.getView().getResolution() * 2
+                resolution: map.getView().getResolution() * 4
             });
             // start the pan at the current center of the map
             var pan = ol.animation.pan({
@@ -57,8 +107,11 @@ angular.module('myApp.view4', ['ngRoute'])
 
         $scope.activate = function () {
 
-            doBounce(rome);
+            doBounce(dest);
         };
+
+
+
 
 
 
