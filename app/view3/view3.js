@@ -23,5 +23,10 @@ angular.module('myApp.view3', ['ngRoute'])
         });
     })
 
+    $scope.next = function () {
+        window.location.href = "/#!/view4";
+
+    }
+
     $scope.sharedData = srvShareData.getData();
 });

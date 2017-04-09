@@ -29,7 +29,11 @@ angular.module('myApp.view4', ['ngRoute'])
 
 
 
+        $scope.next = function () {
 
+            window.location.href = "/#!/view5";
+
+        }
 
         $scope.init = function () {
 
@@ -109,14 +113,5 @@ angular.module('myApp.view4', ['ngRoute'])
 
             doBounce(dest);
         };
-
-
-
-
-
-
-
-
-
 
     });

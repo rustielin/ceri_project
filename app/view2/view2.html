@@ -1,53 +1,67 @@
-<form layout="row">
-    <div style="width:50%; text-align: center">
-
-        <img class="img-circle" src="../res/avatars/prof_pic_placeholder.png"><br>
-
-        <div style="text-align: center; padding-top: 50px">grandchild</div>
-
-        <div style="padding-top: 50px">
-            <md-input-container>
-                <label>Name</label>
-                <input ng-model="young.name">
-            </md-input-container>
-
-            <md-input-container>
-                <label>Age</label>
-                <input ng-model="young.age">
-            </md-input-container>
-        </div>
-
-    </div>
-
-    <md-divider md-inset></md-divider>
-
-    <div style="width:50%; text-align: center">
-
-        <img class="img-circle" src="../res/avatars/prof_pic_placeholder.png"><br>
-
-        <div style="text-align: center; padding-top: 50px">grandchild</div>
-
-        <div style="padding-top: 50px">
-            <md-input-container>
-                <label>Name</label>
-                <input ng-model="young.name">
-            </md-input-container>
-
-            <md-input-container>
-                <label>Age</label>
-                <input ng-model="young.age">
-            </md-input-container>
-        </div>
-
-    </div>
 
 
-</form>
-
-<div ng-controller="view2Ctrl">
+<div ng-controller="view2Ctrl as ctrl">
 
     <p>Hello</p>
     <p>{{ sharedData }}</p>
+
+    <form layout="row">
+        <div style="width:50%; text-align: center">
+
+            <img class="img-circle" src="../res/avatars/prof_pic_placeholder.png"><br>
+
+            <div style="padding-top: 50px">
+                <p style="font-size: x-large; color: #FFFFFF">"Where do you live?"</p>
+
+
+
+                <md-input-container>
+                    <label>City</label>
+                    <input ng-model="young.city">
+                </md-input-container>
+
+                <md-input-container>
+                    <label>State</label>
+                    <input ng-model="young.state">
+                </md-input-container>
+
+
+            </div>
+
+        </div>
+
+        <md-divider md-inset></md-divider>
+
+        <div style="width:50%; text-align: center">
+
+            <img class="img-circle" src="../res/avatars/prof_pic_placeholder.png"><br>
+
+            <div style="padding-top: 50px">
+
+                <p style="font-size: x-large; color: #FFFFFF">"Where were you born?"</p>
+
+                <md-input-container>
+                    <label>City</label>
+                    <input ng-model="old.city">
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Country</label>
+                    <input ng-model="old.country">
+                </md-input-container>
+            </div>
+
+        </div>
+
+
+    </form>
+
+    <div style="text-align: center">
+        <md-button ng-click="shareMyData('city', old.city, 'grandparent');
+            shareMyData('city', young.city, 'grandchild');
+            shareMyData('country', old.country, 'grandparent');
+            shareMyData('state', young.state, 'grandchild');" class="md-raised">Next</md-button>
+    </div>
 
 </div>
 

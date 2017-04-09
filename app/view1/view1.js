@@ -10,6 +10,11 @@ angular.module('myApp.view1', ['ngRoute', 'ngMaterial', 'ngAnimate'])
 
 .controller('view1Ctrl', function($scope, srvShareData, $location) {
 
+
+
+    $scope.pageClass = 'page-home';
+
+
     srvShareData.clearData();
 
     $scope.dataToShare = [];
@@ -26,7 +31,7 @@ angular.module('myApp.view1', ['ngRoute', 'ngMaterial', 'ngAnimate'])
         srvShareData.addData("pic", $scope.grandchildImagePath, "grandchild");
         srvShareData.addData("pic", $scope.grandparentImagePath, "grandparent");
 
-        window.location.href = "/#!/view3";
+        window.location.href = "/#!/view2";
     }
 
     $scope.cycleImage = function (who) {

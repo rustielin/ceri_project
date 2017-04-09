@@ -12,6 +12,10 @@ angular.module('myApp.view6', ['ngRoute'])
         });
     }]).controller('view6Ctrl', function($scope, srvShareData) {
 
+
+    $scope.pageClass = 'page-home';
+
+
     $scope.sharedData = srvShareData.getData();
 
     // srvShareData.clearData();
