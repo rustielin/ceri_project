@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
-
+angular.module('myApp.view1', ['ngRoute', 'ngMaterial'])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
     templateUrl: 'view1/view1.html',
@@ -12,3 +11,5 @@ angular.module('myApp.view1', ['ngRoute'])
 .controller('View1Ctrl', [function() {
 
 }]);
+
+
