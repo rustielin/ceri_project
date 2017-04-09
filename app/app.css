@@ -31,6 +31,13 @@
     padding: 50px;
 }
 
+.img-icon {
+
+    width: 150px;
+    height: 150px;
+    padding: 50px;
+}
+
 .background-img {
     width: 100%;
     background-image: url("./res/backgrounds/1_1.png");
