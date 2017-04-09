@@ -18,14 +18,20 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 app.service('srvShareData', function($window) {
     var KEY = 'App.SelectedValue';
 
-    var addData = function(newObj) {
+    var addData = function(key, newObj, location) { // optional location as "grandparent" or "grandchild"
         var mydata = $window.sessionStorage.getItem(KEY);
         if (mydata) {
             mydata = JSON.parse(mydata);
         } else {
-            mydata = [];
+            mydata = {grandchild: {}, grandparent: {}};
         }
-        mydata.push(newObj);
+
+        if (typeof location === "undefined") {
+            mydata[key] = newObj;
+        } else {
+            mydata[location][key] = newObj;
+        }
+
         $window.sessionStorage.setItem(KEY, JSON.stringify(mydata));
     };
 
@@ -34,7 +40,7 @@ app.service('srvShareData', function($window) {
         if (mydata) {
             mydata = JSON.parse(mydata);
         }
-        return mydata || [];
+        return mydata || {};
     };
 
     var clearData = function() {

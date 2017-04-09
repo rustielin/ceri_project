@@ -1,51 +1,56 @@
+<div style="text-align: center">
 
-<form>
-    <div style="float:left; width:50%; text-align: center">
-        <img class="img-circle" src="../res/prof_pic_placeholder.png"><br>
 
-        <div style="padding-top: 50px">
-            <md-input-container>
-                <label>Name</label>
-                <input ng-model="young.name">
-            </md-input-container>
+    <form layout="row">
+        <div style="width:50%; text-align: center">
 
-            <md-input-container>
-                <label>Age</label>
-                <input ng-model="young.age">
-            </md-input-container>
+            <img class="img-circle" src="../res/prof_pic_placeholder.png"><br>
+
+            <div style="text-align: center; padding-top: 50px">grandchild</div>
+
+            <div style="padding-top: 50px">
+                <md-input-container>
+                    <label>Name</label>
+                    <input ng-model="young.name">
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Age</label>
+                    <input ng-model="young.age">
+                </md-input-container>
+            </div>
+
         </div>
 
+        <md-divider md-inset></md-divider>
 
-    </div>
-    <div style="float:left; width:50%; text-align: center">
-        <img class="img-circle" src="../res/prof_pic_placeholder.png"><br>
+        <div style="width:50%; text-align: center">
 
-        <div style="padding-top: 50px">
-            <md-input-container>
-                <label>Name</label>
-                <input ng-model="old.name">
-            </md-input-container>
+            <img class="img-circle" src="../res/prof_pic_placeholder.png"><br>
 
-            <md-input-container>
-                <label>Age</label>
-                <input ng-model="old.age">
-            </md-input-container>
+            <div style="text-align: center; padding-top: 50px">grandparent</div>
+
+            <div style="padding-top: 50px">
+                <md-input-container>
+                    <label>Name</label>
+                    <input ng-model="old.name">
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Age</label>
+                    <input ng-model="old.age">
+                </md-input-container>
+            </div>
+
         </div>
 
+    </form>
+
+    <div style="width:105%; text-align: center">
+        <md-button ng-click="shareMyData('age', old.age, 'grandparent');
+            shareMyData('age', young.age, 'grandchild');
+            shareMyData('name', old.name, 'grandparent');
+            shareMyData('name', young.name, 'grandchild');" class="md-raised">Next</md-button>
     </div>
-
-    <div style="text-align: center">
-        <md-button class="md-raised">Next</md-button>
-    </div>
-
-</form>
-
-<div ng-controller="view1Ctrl">
-
-    <p>Enter some data to share between Controllers:</p>
-    <input ng-model="myValue" />
-    <button ng-click="shareMyData(myValue)">Share Dare</button>
-
 
 </div>
-
