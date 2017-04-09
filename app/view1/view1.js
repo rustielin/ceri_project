@@ -20,9 +20,11 @@ angular.module('myApp.view1', ['ngRoute', 'ngMaterial', 'ngAnimate'])
     $scope.dataToShare = [];
 
     $scope.grandparentImageNum = 3;
-    $scope.grandchildImagePath = "../res/avatars/BB_2_" + $scope.grandchildImageNum + ".png";
-    $scope.grandchildImageNum = 3;
     $scope.grandparentImagePath = "../res/avatars/BB_2_" + $scope.grandparentImageNum + ".png";
+
+    $scope.grandchildImageNum = 3;
+    $scope.grandchildImagePath = "../res/avatars/BB_2_" + $scope.grandchildImageNum + ".png";
+
 
     $scope.shareMyData = function (key, myValue, location) {
         $scope.dataToShare = myValue;

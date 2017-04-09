@@ -26,10 +26,9 @@
 
 .img-circle {
     border-radius: 50%;
-    max-width: 50%;
-    max-height: 50%;
-    width: 100%;
-    height: auto;
+    width: 150px;
+    height: 150px;
+    padding: 50px;
 }
 
 .background-img {
