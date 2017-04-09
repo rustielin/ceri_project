@@ -8,7 +8,10 @@ var app = angular.module('myApp', [
     'myApp.view3',
     'myApp.view5',
     'myApp.version',
-    'ngMaterial'
+    'ngMaterial',
+    'myApp.view4',
+    'myApp.view8'
+
 ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider, $mdThemingProvider) {
 
     // $mdThemingProvider.theme('default')
@@ -19,10 +22,13 @@ var app = angular.module('myApp', [
 
     $locationProvider.hashPrefix('!');
 
+
     $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
 
-app.service('srvShareData', function ($window) {
+
+
+app.service('srvShareData', function($window) {
     var KEY = 'App.SelectedValue';
 
     var addData = function (key, newObj, location) { // optional location as "grandparent" or "grandchild"
@@ -30,19 +36,13 @@ app.service('srvShareData', function ($window) {
         if (mydata) {
             mydata = JSON.parse(mydata);
         } else {
-            mydata = {grandchild: {}, grandparent: {}};
+            mydata = {};
         }
-
-        if (typeof location === "undefined") {
-            mydata[key] = newObj;
-        } else {
-            mydata[location][key] = newObj;
-        }
-
+        mydata[key] = newObj;
         $window.sessionStorage.setItem(KEY, JSON.stringify(mydata));
     };
 
-    var getData = function () {
+    var getData = function(){
         var mydata = $window.sessionStorage.getItem(KEY);
         if (mydata) {
             mydata = JSON.parse(mydata);
@@ -50,7 +50,7 @@ app.service('srvShareData', function ($window) {
         return mydata || {};
     };
 
-    var clearData = function () {
+    var clearData = function() {
         $window.sessionStorage.removeItem(KEY);
     };
 
