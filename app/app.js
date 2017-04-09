@@ -10,6 +10,8 @@ var app = angular.module('myApp', [
     'myApp.view5',
     'myApp.view6',
     'myApp.view8',
+    'myApp.view9',
+    'myApp.view95',
     'myApp.view10',
     'myApp.version',
     'ngMaterial'
