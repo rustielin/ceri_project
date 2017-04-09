@@ -46,6 +46,19 @@
 /*override the transparent background*/
 md-input-container.md-default-theme label,
 md-input-container.md-default-theme .md-placeholder{
-    color:grey !important;
-    background-color: #FFFFFF;
+    color:#FFFFFF !important;
 }
+
+md-input-container .md-input {
+
+    color: rgba(255,255,255,0.87);
+    border-color: rgba(254,253,103,0.82);
+
+}
+
+md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+    text-decoration-color: #FFFFFF;
+    color: rgba(255,255,255,0.87);
+    border-color: #FFFFFF;
+}
+

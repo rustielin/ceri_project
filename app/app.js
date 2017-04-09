@@ -2,23 +2,30 @@
 
 // Declare app level module which depends on views, and components
 var app = angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.view3',
-  'myApp.view4',
-  'myApp.version'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+    'ngRoute',
+    'myApp.view1',
+    'myApp.view2',
+    'myApp.view3',
+    'myApp.view5',
+    'myApp.version',
+    'ngMaterial'
+]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider, $mdThemingProvider) {
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
+    // $mdThemingProvider.theme('default')
+    //     .primaryPalette('cyan')
+    //     .accentPalette('cyan')
+    //     .backgroundPalette('cyan')
+    //     .warnPalette('cyan');
+
+    $locationProvider.hashPrefix('!');
+
+    $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
 
-app.service('srvShareData', function($window) {
+app.service('srvShareData', function ($window) {
     var KEY = 'App.SelectedValue';
 
-    var addData = function(key, newObj, location) { // optional location as "grandparent" or "grandchild"
+    var addData = function (key, newObj, location) { // optional location as "grandparent" or "grandchild"
         var mydata = $window.sessionStorage.getItem(KEY);
         if (mydata) {
             mydata = JSON.parse(mydata);
@@ -35,7 +42,7 @@ app.service('srvShareData', function($window) {
         $window.sessionStorage.setItem(KEY, JSON.stringify(mydata));
     };
 
-    var getData = function(){
+    var getData = function () {
         var mydata = $window.sessionStorage.getItem(KEY);
         if (mydata) {
             mydata = JSON.parse(mydata);
@@ -43,7 +50,7 @@ app.service('srvShareData', function($window) {
         return mydata || {};
     };
 
-    var clearData = function() {
+    var clearData = function () {
         $window.sessionStorage.removeItem(KEY);
     };
 
