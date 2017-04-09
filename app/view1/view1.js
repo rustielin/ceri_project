@@ -19,7 +19,7 @@ angular.module('myApp.view1', ['ngRoute'])
     $scope.shareMyData = function (myValue) {
 
         $scope.dataToShare = myValue;
-        srvShareData.addData($scope.dataToShare);
+        srvShareData.addData("key", $scope.dataToShare);
 
         window.location.href = "/#!/view2";
     }
