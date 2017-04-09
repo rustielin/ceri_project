@@ -14,6 +14,14 @@ angular.module('myApp.view5', ['ngRoute'])
 
 
 
+        $scope.setJob = function (job) {
+
+            var o;
+
+
+            console.log(job);
+
+        }
 
 
 
