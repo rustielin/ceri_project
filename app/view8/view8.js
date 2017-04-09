@@ -12,7 +12,7 @@ angular.module('myApp.view8', ['ngRoute'])
 
     .controller('view8Ctrl', function ($scope, srvShareData) {
 
-
+        $scope.sharedData = srvShareData.getData();
 
         $scope.setJob = function (job) {
 

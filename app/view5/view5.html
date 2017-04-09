@@ -1,94 +1,109 @@
 <div ng-controller="view5Ctrl">
     <div style="text-align: center">
         <h1 style="text-align: center">How did you get<br>ready for<br>school?</h1>
-        <form layout="row">
-            <div style="width:50%; text-align: center">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <img class="img-circle" src="../res/school/book.png"><br>
-                                <md-switch align="center" style="text-align: center" ng-model="booleanUS1Val" id="buttonUS1Val" >
-                                    result: {{booleanUS1Val}}
-                                </md-switch>
-                            </td>
-                            <td>
-                                <img class="img-circle" src="../res/school/CamGetReadyForSchoolBreakfast.png"><br>
-                                <md-switch id="buttonUS2" ng-click="booleanVal2 = !booleanVal2" ng-init="booleanVal2 = FALSE">
-                                    {{booleanVal2}}
-                                </md-switch>
-                            </td>
-                            <td>
-                                <img class="img-circle" src="../res/school/CamGetReadyForSchoolMakingBed.png"><br>
-                                <md-switch value="500">
-                                    Apple
-                                </md-switch>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="img-circle" src="../res/school/CamGetReadyForSchoolSchoolSupplies.png"><br>
-                                <md-switch>
-                                    boring
-                                </md-switch>
-                            </td>
-                            <td>
-                                <img class="img-circle" src="../res/school/CamGetReadyForSchoolUniform.png"><br>
-                                <md-switch>
-                                    boring
-                                </md-switch>
-                            </td>
-                            <td>
-                                <md-switch>
-                                    boring
-                                </md-switch>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <md-divider></md-divider>
-            <div style="width:50%; text-align: center">
-                <table style="width: 100%">
-                    <tbody>
-                    <tr>
-                        <td>
-                            <md-switch>
-                                boring
-                            </md-switch>
-                        </td>
-                        <td>
-                            <md-switch>
-                                boring
-                            </md-switch>
-                        </td>
-                        <td>
-                            <md-switch>
-                                boring
-                            </md-switch>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <md-switch>
-                                boring
-                            </md-switch>
-                        </td>
-                        <td>
-                            <md-switch>
-                                boring
-                            </md-switch>
-                        </td>
-                        <td>
-                            <md-switch>
-                                boring
-                            </md-switch>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </form>
+
+        <center>
+            <form layout="row">
+
+                <div style="max-width: 1000px; margin:auto">
+
+                    <div id="container">
+                        <a ng-click="setJob('Engineer')">
+                            <figure>
+                                <img src="../res/school/desk.png" width="100px" height="100px" />
+                            </figure>
+                        </a>
+                        <a ng-click="setJob('Doctor')" >
+                            <figure>
+                                <img src="../res/school/book.png" width="100px" height="100px" />
+                            </figure>
+                        </a>
+                        <a ng-click="setJob('Teacher')">
+                            <figure>
+                                <img src="../res/school/ipod.png" width="100px" height="100px" />
+                            </figure>
+                        </a>
+
+                    </div>
+
+                    <div id="container">
+                        <a ng-click="setJob('Businessman')">
+                            <figure>
+                                <img src="../res/school/television.png" width="100px" height="100px" />
+                            </figure>
+                        </a>
+                        <a ng-click="setJob('Chef')">
+                            <figure>
+                                <img src="../res/school/marker.png" width="100px" height="100px" />
+                            </figure>
+                        </a>
+                        <a ng-click="setJob('Police')">
+                            <figure>
+                                <img src="../res/school/tricycle.png" width="100px" height="100px" />
+                            </figure>
+                        </a>
+
+                    </div>
+
+                    <md-divider></md-divider>
+
+
+
+
+                </div>
+>
+                <div style="max-width: 1000px; margin:auto">
+
+                    <div id="container">
+                        <a ng-click="setJob('Engineer')">
+                            <figure>
+                                <img src="../res/school/desk.png" width="100px" height="100px" />
+                            </figure>
+                        </a>
+                        <a ng-click="setJob('Doctor')" >
+                            <figure>
+                                <img src="../res/school/book.png" width="100px" height="100px" />
+                            </figure>
+                        </a>
+                        <a ng-click="setJob('Teacher')">
+                            <figure>
+                                <img src="../res/school/ipod.png" width="100px" height="100px" />
+                            </figure>
+                        </a>
+
+                    </div>
+
+                    <div id="container">
+                        <a ng-click="setJob('Businessman')">
+                            <figure>
+                                <img src="../res/school/television.png" width="100px" height="100px" />
+                            </figure>
+                        </a>
+                        <a ng-click="setJob('Chef')">
+                            <figure>
+                                <img src="../res/school/marker.png" width="100px" height="100px" />
+                            </figure>
+                        </a>
+                        <a ng-click="setJob('Police')">
+                            <figure>
+                                <img src="../res/school/tricycle.png" width="100px" height="100px" />
+                            </figure>
+                        </a>
+
+                    </div>
+
+                    <md-divider></md-divider>
+
+
+
+
+                </div>
+
+            </form>
+
+
+        </center>
+
     </div>
     <div style="text-align: center">
         <md-button class="md-raised" ng-click="shareMyData('booleanUS1val', booleanUS1Val)">next</md-button>
