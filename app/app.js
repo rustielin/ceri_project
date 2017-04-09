@@ -9,6 +9,8 @@ var app = angular.module('myApp', [
     'myApp.view4',
     'myApp.view5',
     'myApp.view6',
+    'myApp.view8',
+    'myApp.view10',
     'myApp.version',
     'ngMaterial'
 ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider, $mdThemingProvider) {

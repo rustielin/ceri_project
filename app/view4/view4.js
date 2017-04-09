@@ -10,7 +10,7 @@ angular.module('myApp.view4', ['ngRoute'])
     }])
 
 
-    .controller('view4Ctrl', function ($scope, srvShareData) {
+    .controller('view4Ctrl', function ($scope, $window, srvShareData) {
 
         //var start = ol.proj.transform([srvShareData.getData()['grandchild']['lat'], srvShareData.getData()['grandchild']['long']], 'EPSG:4326', 'EPSG:3857');
         //var dest = ol.proj.transform([srvShareData.getData()['grandfather']['lat'], srvShareData.getData()['grandfather']['long']], 'EPSG:4326', 'EPSG:3857');
@@ -111,7 +111,7 @@ angular.module('myApp.view4', ['ngRoute'])
 
         $scope.activate = function () {
 
-            doBounce(dest);
+            $window.location = "/#!/view5";
         };
 
     });
