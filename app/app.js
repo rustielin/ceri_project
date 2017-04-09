@@ -5,6 +5,8 @@ var app = angular.module('myApp', [
   'ngRoute',
   'myApp.view1',
   'myApp.view2',
+  'myApp.view3',
+  'myApp.view4',
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
@@ -12,8 +14,6 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
-
-
 
 app.service('srvShareData', function($window) {
     var KEY = 'App.SelectedValue';

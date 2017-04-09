@@ -29,3 +29,23 @@
     max-width: 50%;
     max-height: 50%;
 }
+
+.background-img {
+    background-image: url("./res/backgrounds/1_1.png");
+    /*filter: blur(3px);*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.big-text {
+    line-height: 0%;
+}
+
+/*override the transparent background*/
+md-input-container.md-default-theme label,
+md-input-container.md-default-theme .md-placeholder{
+    color:grey !important;
+    background-color: #FFFFFF;
+}

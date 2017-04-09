@@ -1,11 +1,11 @@
+<script src="view1.js"></script>
+<!--<div class="background-img"></div>-->
 <div style="text-align: center">
-
-
     <form layout="row">
         <div style="width:50%; text-align: center">
 
-            <img class="img-circle" src="../res/prof_pic_placeholder.png"><br>
-
+            <img id="grandchildImage" class="img-circle" src="../res/avatars/BB_2_7.png"><br>
+            <md-button class="md-raised" ng-click="cycleImage('grandchild')" id="grandchildCycle" >Cycle</md-button>
             <div style="text-align: center; padding-top: 50px">grandchild</div>
 
             <div style="padding-top: 50px">
@@ -22,11 +22,12 @@
 
         </div>
 
-        <md-divider md-inset></md-divider>
+        <md-divider></md-divider>
 
         <div style="width:50%; text-align: center">
 
-            <img class="img-circle" src="../res/prof_pic_placeholder.png"><br>
+            <img id="grandparentImage" class="img-circle" src="../res/avatars/BB_2_3.png"><br>
+            <md-button class="md-raised" ng-click="cycleImage('grandparent')" id="grandparentCycle" >Cycle</md-button>
 
             <div style="text-align: center; padding-top: 50px">grandparent</div>
 
@@ -46,7 +47,7 @@
 
     </form>
 
-    <div style="width:105%; text-align: center">
+    <div style="text-align: center">
         <md-button ng-click="shareMyData('age', old.age, 'grandparent');
             shareMyData('age', young.age, 'grandchild');
             shareMyData('name', old.name, 'grandparent');

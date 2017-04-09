@@ -1,14 +1,27 @@
 'use strict';
 
-angular.module('myApp.view2', ['ngRoute'])
+angular.module('myApp.view3', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when("/view2", {
-            templateUrl: "view2/view2.html",
-            controller: "view2Ctrl"
+        $routeProvider.when("/view3", {
+            templateUrl: "view3/view3.html",
+            controller: "view3Ctrl"
         });
-    }]).controller('view2Ctrl', function($scope, srvShareData) {
+    }]).controller('view3Ctrl', function($scope, srvShareData) {
+
+    $scope.nextPage = function() {
+        window.location.href = "/#!/view2";
+    }
+
+    $scope.checkkey = function (event) {
+        alert(event.keyCode);
+    }
+
+    $scope.$on('keypress', function (e, a, key) {
+        $scope.$apply(function () {
+            alert(key);
+        });
+    })
 
     $scope.sharedData = srvShareData.getData();
-
 });
