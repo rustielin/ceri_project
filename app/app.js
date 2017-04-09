@@ -7,8 +7,10 @@ var app = angular.module('myApp', [
     'myApp.view2',
     'myApp.version',
     'myApp.view4'
+
 ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');
+
 
     $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
